@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceito Display Flex</title>
+<style>
+    .s-flex{
+        max-width:300px;
+        padding: 10px;
+        border: 2px solid black;
+        
+    }
+    .s-item{
+        background-color: blueviolet;
+        margin: 5px;
+    }
+    .flex{
+        max-width:300px;
+        padding: 10px;
+        border: 2px solid black;
+        display: flex;
+    }
+    
+    .item{
+        background-color: chartreuse;
+        margin: 5px;
+    }
+    
+</style>
+</head>
+<body>
+    <h1>Sem Display Flex</h1>
+    <div class="s-flex">
+        <div class="s-item">Item 1</div>
+        <div class="s-item">Item 2</div>
+        <div class="s-item">Item 3</div>
+
+    </div>
+    <h1>Com Display Flex</h1>
+    <div class="flex">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+
+    </div>
+</body>
+</html>

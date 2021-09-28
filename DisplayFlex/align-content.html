@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Align-Content</title>
+    <style>
+      .container {
+        height: 400px;
+        max-width: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid black;
+      }
+
+      .item {
+        background-color: blue;
+        padding: 0 5px;
+        flex: 1;
+        text-align: center;
+        color: white;
+        margin: 5px;
+        border: 2px solid red;
+      }
+      .center{
+          align-content: center;
+      }
+      .start{
+          align-content: flex-start;
+      }
+      .end{
+          align-content: flex-end;
+      }
+
+      .around{
+          align-content: space-around;
+      }
+      .between{
+          align-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+      <p>Stretch - comportamento padrão.</p>
+    <div class="container">
+      <div class="item">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. 
+      </div>
+      <div class="item">
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+      </div>
+      <div class="item">Lorem ipsum dolor sit amet</div>
+      <div class="item">
+        Es un hecho establecido hace demasiado tiempo que un lector se distraerá
+        con el contenido del 
+      </div>
+      <div class="item">
+        Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles,
+      </div>
+      <div class="item">由于曾经一台匿名的打印机刻意打乱了一盒印刷字体从</div>
+      <div class="item">
+        jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle
+        poligraficznym. 
+      </div>
+    </div>
+
+    <p>Center</p>
+    <div class="container center">
+      <div class="item">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. 
+      </div>
+      <div class="item">
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+      </div>
+      <div class="item">Lorem ipsum dolor sit amet</div>
+      <div class="item">
+        Es un hecho establecido hace demasiado tiempo que un lector se distraerá
+        con el contenido del 
+      </div>
+      <div class="item">
+        Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles,
+      </div>
+      <div class="item">由于曾经一台匿名的打印机刻意打乱了一盒印刷字体从</div>
+      <div class="item">
+        jest tekstem stosowanym jako przykładowy wypełniacz w przemyśle
+        poligraficznym. 
+      </div>
+    </div>
+
+    <p>Flex-start</p>
+    <div class="container start">
+      <div class="item">
+        Lorem Ipsum is simply dummy text of the</div>
+      <div class="item">
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+      </div>
+      <div class="item">Lorem ipsum dolor sit amet</div>
+      <div class="item">
+        Es un hecho establecido hace demasiado tiempo que      
+      </div>
+      <div class="item">
+        Hay muchas variaciones de los pasajes</div>
+      <div class="item">由于曾经一台匿名的打印机刻意打乱了</div>
+      <div class="item">
+        jest tekstem stosowanym jako przykładowy 
+      </div>
+    </div>
+
+    <p>Flex-end</p>
+    <div class="container end">
+      <div class="item">
+        Lorem Ipsum is simply dummy text of the</div>
+      <div class="item">
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+      </div>
+      <div class="item">Lorem ipsum dolor sit amet</div>
+      <div class="item">
+        Es un hecho establecido hace demasiado tiempo que      
+      </div>
+      <div class="item">
+        Hay muchas variaciones de los pasajes</div>
+      <div class="item">由于曾经一台匿名的打印机刻意打乱了</div>
+      <div class="item">
+        jest tekstem stosowanym jako przykładowy 
+      </div>
+    </div>
+
+    <p>space-around</p>
+    <div class="container around">
+      <div class="item">
+        Lorem Ipsum is simply dummy text of the</div>
+      <div class="item">
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+      </div>
+      <div class="item">Lorem ipsum dolor sit amet</div>
+      <div class="item">
+        Es un hecho establecido hace demasiado tiempo que      
+      </div>
+      <div class="item">
+        Hay muchas variaciones de los pasajes</div>
+      <div class="item">由于曾经一台匿名的打印机刻意打乱了</div>
+      <div class="item">
+        jest tekstem stosowanym jako przykładowy 
+      </div>
+    </div>
+
+    <p>space-between</p>
+    <div class="container between">
+      <div class="item">
+        Lorem Ipsum is simply dummy text of the</div>
+      <div class="item">
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
+      </div>
+      <div class="item">Lorem ipsum dolor sit amet</div>
+      <div class="item">
+        Es un hecho establecido hace demasiado tiempo que      
+      </div>
+      <div class="item">
+        Hay muchas variaciones de los pasajes</div>
+      <div class="item">由于曾经一台匿名的打印机刻意打乱了</div>
+      <div class="item">
+        jest tekstem stosowanym jako przykładowy 
+      </div>
+    </div>
+  </body>
+</html>

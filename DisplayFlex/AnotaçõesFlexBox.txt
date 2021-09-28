@@ -1,0 +1,27 @@
+FlexBox
+
+"Propriedades Flex-itens"
+-> Flex-Grow - Fator Crescimento
+
+-> Flex-basis - Valor Inicial do item
+
+-> Flex-shrink - Capacitade de redução
+
+-> flex - abreviação para as propriedades(Grow,Basis,Shrink)
+
+-> order - order de distribuição do items
+
+-> align-self - alinhamento de um item especifico
+
+Flex-Flow -> atalho para o 'flex-direction' e 'flex-wrap'
+
+'align-items'
+-> center: alinhamento dos itens ao centro
+
+-> stretch: padrão,e os flex itens cresçam igualmente
+
+-> flex-start: alinhamento dos itens no inicio
+
+-> flex-end: alinhamento dos itens no final
+
+-> baseline: alinhamneto de acordo com a linha base da tipografia dos itens
