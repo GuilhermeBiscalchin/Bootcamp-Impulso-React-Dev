@@ -1,0 +1,21 @@
+Relembrando GitHub
+
+*Linguagem de marcação para o REAME.md **
+
+https://www.markdownguide.org/basic-syntax/
+
+Verificar status do projeto
+
+git status
+
+Adicionar conteúdo novos
+
+git add .
+
+Escrever mensagem sobre o que foi mudado.
+
+git commit -m "Sua mensagem"
+
+Enviar de fato para o GitHub
+
+git push 'nome do Servidor local' master/main
