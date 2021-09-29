@@ -25,3 +25,11 @@ Flex-Flow -> atalho para o 'flex-direction' e 'flex-wrap'
 -> flex-end: alinhamento dos itens no final
 
 -> baseline: alinhamneto de acordo com a linha base da tipografia dos itens
+
+***** FLEX-items
+
+-> Flex-grow - não funciona se adicionar no container
+
+-> Flex- basis - tamanho inicial dos items
+
+-> align-self - alinhamento do item
