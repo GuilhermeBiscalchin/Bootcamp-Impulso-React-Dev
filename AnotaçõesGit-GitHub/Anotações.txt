@@ -19,3 +19,7 @@ git commit -m "Sua mensagem"
 Enviar de fato para o GitHub
 
 git push 'nome do Servidor local' master/main
+
+Arquivo já criando,antes de subir no servidor.
+
+git pull
