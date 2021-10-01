@@ -1,0 +1,58 @@
+** Operadores de Atribuição **
+
+operador ------------- Exemplo ------------- Equivalente a
+  =                     x = y                  x = y
+  +=                    x += y                 x = x + y
+  *=                    x *= y                 x = x * y
+  /=                    x /= y                  x = x / y
+  %=                     x %= y                 x = x % y (modulo,traz o resto da divisão)
+
+
+** Operadores de Aritimética **
+
+Operador ------------- Descrição
+  +                     Adição
+  -                     Subtração
+  *                     Multiplicação
+ **                     Exponencial
+ /                      Divisão
+ %                      Módulo
+ ++                     Incrementar
+ --                     Decrementar
+
+ ** Operadores de Comparação **
+
+Operador -------------- Descrição
+ ==                      Igual a
+ ===                     Mesmo valor e mesmo tipo
+ !=                      Diferente
+ !==                     Valor e tipos diferentes
+ >                       Maior que
+ <                       Menor que
+ >=                      Maior ou igual
+ <=                      Menor ou igual
+
+** Operadores de Lógica **
+
+Operado ------------------- Descrição
+ &&                          "e" lógico
+ ||                          "ou" lógico
+ !                           "não" lógico 
+
+** Operador Condicional(ternário) **
+
+(condição) ? expressão1 : expressão 2
+
+  ===
+
+   if(condição)
+		statement(exp1);
+	else 
+		statement(exp2)
+
+///////////////////////////////////////////////
+Para chamar a função no NODE, sem a necessidade de HTML.
+
+entrar na pasta da aplicação e digitar o 'node' com o nome que escolhi do JS.
+
+
