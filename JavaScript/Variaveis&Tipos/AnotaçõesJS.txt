@@ -1,0 +1,60 @@
+var, let e const
+
+descrição	 var	 		const		 let
+escopo		global ou local		bloco		bloco
+redeclarar	sim			não		não
+reatribuir	sim			não		sim
+hoisting	sim			não		não
+
+**** estrutura de dados *****
+
+- Tipagem dinâmica e fraca.
+
+Dados Primitivos => não possui métodos.
+
+- number
+- string 
+- boolean
+
+Dados não Primitivos.
+
+- objects
+- array
+
+** Strings ** 
+
+Principais métodos
+
+- Concatenação 
+- Propriedade Length
+- Iterabilidade
+- Formatação
+
+** Number** 
+Inteiros ou decimais
+
+
+** Booleans**
+
+True ou False
+
+** Arrays **
+
+Lista iterável de elementos
+
+** Objetos **
+Estrutura tipo 'chave e valor'
+
+** Empty, undefined e null **
+
+Todos retornam em false.
+
+Empty - foi declarada, não tem nenhum um valor
+
+null - proposital que o valor não existe.(o valor fica nulo)
+
+undefined - valor não existe, indefinido.
+
+
+
+ 
