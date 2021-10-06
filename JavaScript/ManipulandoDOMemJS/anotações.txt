@@ -1,0 +1,102 @@
+--> O que é o DOM.
+
+Document Object Model,
+
+DOM HTML é um padrão de como acessar e modificar os elementos HTML de uma página.
+
+--> Diferença entre DOM vs BOM
+
+BOM -> Browser Object Model
+
+Tudo o que está dentro do objeto window.
+
+                    window
+document - history - location - screen - navigator
+
+--> Selecionando elementos
+
+Interação para manipular o DOM.
+
+* tag (body,h1,li)
+* id(h1 id ="titulo")
+* classe(section class="texto")
+
+Para seleção.
+
+ID -> document.getElementById('Titulo')
+// busca o que está selecionado com esse id
+
+TAG -> document.getElementsByTagName('li')
+// Mostra um array, com todas esses tags, 'elements' por isso array, para retornar apenas um, tem que utilizar o indice.
+
+CLASSE -> document.getElementsByClassName('textos')
+// retornar um array, com todas as classes que tem.
+
+BUSCA-PERSONALIZADAS -> document.querSelectorAll('.primeira-classe .segunda-classe')
+// retornar um array, com os elementos que tem essas duas classes, ou uma classe e um id, ou tag e id, ou tag e classe, para sair do array, buscar com o indice.
+
+** Adicionar e Deletar
+
+            Método                          Descrição
+document.createElement(element)     Cria um novo elemento HTML.
+document.removeChild(element)       Remove um elemento.
+document.appendChild(element)       Adiciona um elemento.
+document.replaceChild(new,old)      Substitui um elemento.
+
+--> Trabalhando com estilos.
+
+Classes -> element.classList
+
+<div id = "meu-elemento" class="classe">
+
+const meuElemento = document.getElementById("meu-elemento")
+meuElemento.classList.add("novo-estilo")
+//adiciona a classe 'meu-estilo'
+
+meuElemento.classList.remove("classe")
+//remove a classe "classe"
+
+meuElemento.classList.toggle("dark-mode")
+//adiciona a classe "dark-mode" caso ela não faça parte da lista, e remove caso ela faz parte da lista.
+
+-> Acessando diretamento o CSS de um elemento.
+
+document.getElementsByTagName("p").style.color = "blue".
+
+--> Eventos
+
+Qualquer tipo de ação que o usuário faz em um página(iteração)
+
+-> Tipos
+Eventos do mouse
+
+mouseover, mouseout (idea do hover)
+
+Eventos do clique
+
+click,dbclick
+
+Eventos de atualização
+
+Change,load
+
+--> Acionando os Eventos.
+
+->Event listener
+Diretamento no Javascript, cria um evento que vai ser acionado no momento em que o usuário realizar determinada ação.
+
+const botao = document.getElementById("meuBotao")
+botao.addEventListener("click", realizar essa função)
+
+-> Dentro do atributo HTML
+Especifica a função a ser chamada diretamento no elemento HTML
+
+<h1 onclick="mudaTexto(this)">clique aqui!
+<script>
+function mudaTexto(id){
+    id.innerHTML = "Mudei"
+}
+
+
+
+

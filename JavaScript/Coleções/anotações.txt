@@ -13,6 +13,7 @@ const myMap = new Map()
 adicionar,ler e deletar.
 
 //Setando que, a chave é 'apple' e o valor é 'fruta'
+//adicionando
 myMap.set('apple','fruit')
 //Map(1) {'apple' => 'fruit'}
 
