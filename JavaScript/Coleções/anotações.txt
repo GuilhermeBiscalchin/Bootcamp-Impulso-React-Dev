@@ -1,0 +1,72 @@
+=> Map
+
+-Estrutura
+
+const myMap = new Map()
+Características
+- Uma coleção de arrays no formato [chave,valor]
+- Pode iterado por um loop for...of
+
+- Métodos
+
+const myMap = new Map()
+adicionar,ler e deletar.
+
+//Setando que, a chave é 'apple' e o valor é 'fruta'
+myMap.set('apple','fruit')
+//Map(1) {'apple' => 'fruit'}
+
+
+myMap.get("apple");
+//fruit
+
+myMap.delete("apple");
+//true
+
+//retornar depois de deletado.
+
+myMap.get("apple")
+//undefined
+
+Diferença de Map vs Objetos
+
+* Maps podem ter chaves de qualquer tipo (objeto apenas em string)
+* Maps possuem a propriedade lenght (objeto, tem que iterar por todas as propriedades)
+* Maps são mais fáceis de iterar 
+* Utilizado quando o valor das chaves é desconhecido. (objeto, apenas quando conhece a chave)
+* Os valores tem o mesmo tipo (objeto,não necessario do mesmo tipo)
+
+=> Set 
+
+- Estrutura
+
+Sets são estruturas que armazenam apenas valores unicos
+
+const myArray = [1,1,2,2,3,4,5,6,7,8,2,1]
+
+const mySet = new Set(myArray)
+// vai ser descartados os repetidos.
+
+- Métodos
+adicionar, consultar e deletar.
+
+const mySet = new Set()
+
+adicionar
+mySet.add(1)
+mySet.add(5)
+
+consultar
+mySet.has(1)
+//true
+mySet.has(3)
+//false, pois não tem esse valor no Set
+
+deletar
+mySet.delete(5)
+
+Diferença de Set vs Array
+
+-Possui valores únicos
+- Em ves da propriedade lenght,consulta-se o numero de registros pela propriedade size
+- Não possui os Métodos map,filter,reduce e etc.
