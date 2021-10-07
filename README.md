@@ -11,7 +11,7 @@
   <li>FlexBox 
   <img align = "center" alt="css" widht="40" height="40" src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg">
   </li>
-<li><a href = "https://github.com/GuilhermeBiscalchin/flexbox-dio" target="_blank">
+<li><a href = "https://github.com/GuilhermeBiscalchin/flexbox-dio">
      Pagina em FlexBox
     </a>
      <img align = "center" alt="js" widht="40" height="40"  src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg">
