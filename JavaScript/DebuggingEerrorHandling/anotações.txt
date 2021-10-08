@@ -1,0 +1,86 @@
+=> Tratamento de Erros!
+
+- Tipos de Erros
+
+1.ECMAScript Error
+Erros que ocorrem em tempo de execução.
+* Alguma variável não declarada, e a linha que aconteceu.
+
+Composto por:
+- Mensagem
+- Nome
+- Linha
+- Call Stack
+
+2. DOMException
+Erros relacionados ao DOM.
+
+* Diretamente na página WEB.
+* Erros referentes a estruturas.
+
+- Tratando de Erros
+
+1.Explicar a diferença entre 'throw' e 'return'
+
+Throw => função da verifica Palindromo. No console quando vai errado, mostra em vermelho como erro!
+
+if(!string) throw "String inválida";
+
+No caso do 'return', mostra apenas a String, contendo o erro, não tratando como erro.
+
+2. Apresentar a implementação da declaração try/catch
+
+Try...catch => função verifica Palindromo, tratando junto com o throw, vou colocar dentro do 'try', a chamada da função, e no 'catch',como quero chamar esse erro, no caso foi apenas um console.log.(Personalização)
+
+function tryCatchExemplo(string){
+    try{
+        verificaPalindromo(string)
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+
+** Outra maneira capturando com o throw
+
+function tryCatchExemplo(string){
+    try{
+        verificaPalindromo(string)
+    }
+    catch(e){
+        throw e
+    }
+}
+
+3. Finally
+
+No bloco do try...catch, utilizado junto o finally, sendo que vai ser chamado dando um erro ou com sucesso na função, nesse caso mostra se foi enviada uma string válida, caso não, aparece o erro, caso tenha sido válida, mostra qual o nome da string e um boolean.
+
+function tryCatchExemplo(string){
+    try{
+       return verificaPalindromo(string)
+    }
+    catch(e){
+        throw e
+    }
+    finally{
+        console.log('A string enviada foi:' + string)
+    }
+}
+
+- Objeto Error
+Manipular o objeto Error
+
+Código,aceita os parâmetros (message,fileName,lineNumber),mas são opcionais.
+Via de regra, é apenas utilizado a 'message'
+
+new Error(message,fileName,lineNumber)
+
+const meuErro = new Error('Mensagem Inválida')
+throw meuErro
+
+* O erro pode ter um nome.
+
+const meuErro = new Error('Mensagem Inválida')
+meuErro.name = 'InvalidMessage'
+throw meuErro
