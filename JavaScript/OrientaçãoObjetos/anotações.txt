@@ -1,0 +1,28 @@
+Imperativo -> como resolver problemas
+
+Declarativa -> o que você vai fazer.
+
+Os programas são 'objetos' que possuem uma série de propriedades
+
+Pilares
+1. Herança => O objeto filho herda propriedades e métodos do objeto pai.
+
+2. Polimorfismo => Objetos podem herdar a mesma classe pai, mas se comportarem de forma diferente quando invocamos seus métodos.
+
+3. Encapsulamento => Cada classe tem propriedades e métodos independentes do restante do código.
+
+4. Abstração => Processo mental que consiste em isolar um aspecto determinado de um estado de coisas relativamente complexo, a fim de simplificar a sua avaliação, classificação ou para permitir a comunicação do mesmo.(simplificar)
+
+-> Protótipos
+Todos os objetos Javascript herdam propriedades e métodos de um prototype.
+O objeto Object.prototype está no topo desta cadeia.
+
+-> Classes
+
+Syntatuc sugar: uma sintaxe feita para facilitar a escrita.
+
+Javascript não possui classes nativamente. Todas as classes são objetos e a herança se dá por protótipos.
+
+ - construtor; - getter e setter; - super; - método;
+
+ 
