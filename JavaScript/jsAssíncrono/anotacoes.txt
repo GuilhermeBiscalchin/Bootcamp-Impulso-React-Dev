@@ -1,0 +1,128 @@
+1. Assincronicidade.
+
+- Assíncrono -> Que não corre ou não se efetiva ao mesmo tempo.
+
+Faculdade Presencial(sincrono) X Faculdade EAD(assíncrono)
+
+Javascript roda de maneira síncrona.
+
+- Promises
+
+Objeto de processamento assíncrono.
+Inicialmente,seu valor é desconhecido. Ela pode, então,ser resolvida ou rejeitada.
+
+resolved - then()
+rejected - catch()
+
+Tem 3 estados.
+1) Pending
+2) Fulfilled
+3) Rejecte
+
+- Estrutura,exemplo.
+
+const myPromise = new Promise((resolve,reject) => {
+    window.setTimeout(() => {
+        resolve(console.log('Resolvida!'))
+    }, 2000)
+})
+
+Depois de 2 segundos, quero que apareça no console que a Promise foi resolvida.
+
+Manipulação
+
+await myPromise
+    .then((result) => result + 'passando pelo then')
+    .then((result) => result + 'e agora acabou')
+    .catch((err) => console.log(err.message))
+
+A promise, foi resolvida, com esse resultado, vou passar para o 'then' e concatenar com a string.
+Novamente, pego os dois resultado, e concatenar com a string.
+Caso nesse processo tenha um erro, o 'catch' avisa com a message.
+
+Para pegar o resultado quando for resolvida ou rejeitada a Promise, coloco a palavra 'await'
+
+- Async/await
+Funções assíncronas precisam dessas duas palavras chaves, para quando o JS se deparar com o 'Async', para a função, esperar a resolução da Promise, e assim prosseguir para o 'await', utilizando o que foi resolvido na promise.
+
+async function resolvePromise(){
+    const myPromise = new Promise((resolve,reject) => {
+        window.setTimeout(() => {
+            resolve('Resolvida')
+        }, 3000)
+    })
+
+    const resolved = await myPromise
+                    .then((result) => result + 'passando pelo then')
+                    .then((result)=> result + 'e agora acabou!')
+                    .catch((err) => console.log(err.message))
+                    
+        return resolved            
+}
+
+
+ Uma Promise, retorna outra Promise.
+Pode ser usado o try...catch
+
+2. Consumindo API.
+
+Uma API é uma forma de intermediar os resultados do back-end com o que é apresentado no front-end.
+Você consegue acessá-la por meio de URLs.
+
+JSON -> JavaScript Object Notation
+
+É muito comum que APIs retornem seus dados no formato.json,portanto precisamos tratar esses dados quando os recebermos, ou enviamos em JSON,ou chega em JSON.
+
+Exemplo: sempre vem em formato de objeto.
+
+{
+  "description": "schema POST bank",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number",
+      "minumum": 0
+    },
+    "code": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
+
+=> Método fetch
+
+Para consumir APIs, sempre retornar um Promise, e é necessário converter para json, a resposta.
+Passando como parâmetro, a 'url' e 'option',verificar documento do JS.
+Por se tratar de Promise, necessário utilizar o await.
+
+Exemplo:
+
+fetch(url,options)
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+Utilizando as operações (POST,GET,PUT,DELETE,etc)
+
+Exemplo de GET(buscando os dados)
+
+fetch('https://endereco-api.com/',{
+    method:'GET',
+    cache:'no-cache',
+})
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+Exemplo de POST(enviando os dados e converter para uma string.)
+
+fetch('https://endereco-api.com/',{
+    method:'POST',
+    cache:'no-cache',
+    body:JSON.stringify(data)
+})
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+    

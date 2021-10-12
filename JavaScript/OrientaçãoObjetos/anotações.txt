@@ -13,7 +13,7 @@ Pilares
 
 4. Abstração => Processo mental que consiste em isolar um aspecto determinado de um estado de coisas relativamente complexo, a fim de simplificar a sua avaliação, classificação ou para permitir a comunicação do mesmo.(simplificar)
 
--> Protótipos
+-> Protótipos(Herança)
 Todos os objetos Javascript herdam propriedades e métodos de um prototype.
 O objeto Object.prototype está no topo desta cadeia.
 
@@ -25,4 +25,3 @@ Javascript não possui classes nativamente. Todas as classes são objetos e a he
 
  - construtor; - getter e setter; - super; - método;
 
- 
