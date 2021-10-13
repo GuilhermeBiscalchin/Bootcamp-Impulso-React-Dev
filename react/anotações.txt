@@ -1,0 +1,97 @@
+Configurar o React
+
+- React Create App
+
+- React Scripts
+
+=> Criação do package.json
+
+    npm init
+
+=> Instalação do ReactJS
+
+    npm install --save react@16.8.6 react-dom@16.8.6 react-scripts@3.0.1
+
+React Script, monta o servidor para o rodar o projeto.
+
+ ** npm => gerenciador de dependecias do projeto **
+
+ => Criação manual da pasta public
+
+React - é um SPA, aplicação única.
+
+// Buscando a div, do html com a const 'rootElement'
+const rootElement = document.getElementById("root");
+
+// Tem a função 'render', onde estou passando um parâmentro, junto com o meu elemento.
+ReactDOM.render(<App />, rootElement);
+
+=> JSX 
+
+Nem HTML e nem uma string, linguagem de marcação de HTML e o poder do JS.
+
+O browser não interpreta o JSX, para isso é necessário um transpilador para que a aplicação possa entender o código. O mais utilizado é o Babel.
+
+ ** criando com o react-scripts, o babel já vem instalado. **
+
+1 - Exemplo de JSX
+
+function primeiroJSX(){
+  return(
+    <div>
+      Guilherme Augusto - Introdução ao ReactJS
+    </div>
+  )
+}
+
+
+const App = () => {
+  return (
+    <div>
+      {primeiroJSX()}
+    </div>
+  );
+}
+
+2 - Exemplo de JSX - realizando uma soma.
+
+function sum(a,b){
+  return a + b
+}
+
+//primeiro JSX -> lança como função na renderização do arquivo.
+function primeiroJSX(){
+  return(
+    <div>
+      Guilherme Augusto - Introdução ao ReactJS
+      <h1>Soma: {sum(10,20)}</h1>
+    </div>
+  )
+}
+
+
+=> Renderização 
+
+- renderização de elementos.
+- React DOM 
+- Nós Raiz
+
+React 'pensa' em como a interface deve estar a cada momento. Melhora da permoface.
+
+=> Componentes e Props.
+
+- Função e Classe
+- Props
+- Composição de Componentes.
+- Extração de Componentes.
+
+=> Estado e Ciclo de Vida
+
+- Inicialização
+- Montagem
+- Atualização
+- Desmontagem
+
+Nenhum Componente pai ou filho devem saber se outro Componente possui estado ou não.
+O estado é apenas local ao Componente e caso seja necessário enviar algum atributo, é feito via props.
+
