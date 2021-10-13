@@ -1,0 +1,51 @@
+1. Map
+
+- Função 'Map' cria um novo array
+- Não modifica  array original
+- Realiza as operações em ordem.
+
+=> Sintaxe
+
+    array.map(callback, thisArg)
+        callback(item,index,array) => parâmetros.
+
+ Callback: função a ser executada em cada elemento.
+ thisArg(opcional): valor de 'this' dentro da função de callback.
+
+Comparação Map vs forEach
+
+Exemplo está no arquivo exemplo.js
+
+- Diferença é o valor de retorno
+- Considere se o array auxiliar será necessário.
+
+2. Filter
+
+- Cria um novo array.
+- Não modifica o array original.
+
+=> Sintaxe
+
+    array.filter(callback,thisArg)
+
+Callback: função a ser executada em cada elemento.
+thisArg(opcional): valor de 'this' dentro da função de callback.
+
+Exemplo está no arquivo exemplo.js
+
+3. Reduce
+
+Executa uma função em todos os elementos do array, retornando um valor único.
+
+=> Sintaxe
+
+    array.reduce(callbackFn,initialValue)
+
+Callback: função a ser executada a partir do acumulador.
+initialValue(opcional): valor sobre o qual o retorno final irá atuar.
+
+Exemplo está no arquivo exemplo.js
+
+Accumulator/prevValue: acumulador de todas as chamadas de callbackFn.
+
+currentValue: elemento atual sendo acessado pelo função.
