@@ -95,3 +95,158 @@ React 'pensa' em como a interface deve estar a cada momento. Melhora da permofac
 Nenhum Componente pai ou filho devem saber se outro Componente possui estado ou não.
 O estado é apenas local ao Componente e caso seja necessário enviar algum atributo, é feito via props.
 
+=> Webpack ao desenvolvimento com ReactJS
+
+É um module bundler (um empacotador de módulos para aplicações JS)
+Gerar bundler que será utilizado no HTML, em ES5
+
+=> Conceitos do Webpack
+ 
+ - Entry -> utilizando grafo, precisa de um ponto de entrada para buscar todos os módulos e dependecias.
+ 
+ - Output -> É para determinar quais são os bundlers que o Webpack irá emitir.
+
+ - Loaders -> É para permitir que o Webpack gerencie arquivos não são javascript.
+
+ - Plugins -> Plugins podem ser utilizados para otimizaão de pacotes,minificação, injeção de script e muito mais.
+
+ - Mode -> Utilizados para abordagem de configuação zero. É possível configurar módulos como production,development ou none.
+
+ -> Production, trás otimizações internas.(arquivo final para produção)
+ -> Development, É executado com três plugins: UglifyjsPlugin, ModuleConcatenationPlugin e NoEmitOnErrosPlugin.
+
+=> Criação do arquivo webpack.config.js
+
+  npm i -D webpack webpack-cli //Instalação Mínima do Webpack
+
+  "build":"webpack --mode production"
+
+  npm i @babel/core babel-loader @babel/preset-env @babel/present-react --save-dev 
+
+=> Criação do arquivo .babelrc
+
+{
+  "present":[
+    "@babel/preset-env"
+  ]
+}
+
+ ** Tenho que colocar o codigo abaixo
+
+    npm init
+
+** Depois fazer a instalação do webpack
+
+      npm install --save-dev webpack webpack-cli 
+
+** Configurar se no package.json está as duas dependecias de desenvolvimento.
+
+Criação do arquivo -webpack.config.js 
+
+No script, onde está escrito test, posso alterar para utilizar comandos, uso o 
+
+  "build": "webpack --mode production"
+
+Aqui chamo o arquivo 'teste' que criei.
+
+entry: './teste.js',
+
+E para rodar o aplicativo,
+
+  npm run build (foi o nome do arquivo que escolhi para rodar.)
+
+Dessa forma, vai ser gerada a pasta 'dist' junto com o arquivo 'bundle.js'
+
+Sendo assim, vai executar o teste.js
+
+  node dist/bundler.js 
+
+Agora adicionar o 'babel'
+
+npm i @babel/core babel-loader @babel/preset-env @babel/present-react --save-dev 
+
+Depois de instalado no webpack.config.js
+
+module:{
+        rules:[
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use:{
+                    loader:"babel-loader"
+                }
+            }
+        ]
+    },
+
+Fazer os arquivos;
+
+App.js
+index.html
+index.js
+
+E criar o arquivo, esse é um arquivo padrão.
+
+.babelrc -> para configuração do babel
+
+Instalação do ReactDOM
+
+  npm i react react-dom 
+
+E colocar o arquivo no '.babelrc'
+
+{
+  "presets":[
+    "@babel/preset-env"
+    "@babel/preset-react"
+  ]
+}
+
+No script coloco tambem um modo de desenvolvimento.
+
+"scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development"
+
+Ou posso executar tbm dentro do webpack.config.js, o modo que quero que execute.
+
+ mode:'production',
+
+
+Executo o arquivo.
+
+=> Instalação do plugins para HTML
+
+  npm i -D html-webpack-plugin html-loader
+
+No webpack.config.js
+
+fazer a const => const HtmlWebPackPlugin = require("html-webpack-plugin")
+
+E colocar embaixo o plugin
+
+plugins:[
+        new HtmlWebPackPlugin({
+            template:"./src/index.html",
+            filename:"./index.html"
+        })
+    ]
+
+E rodar o build, do HTML.
+
+Ver a aplicação funcionando adiconar mais uma dependecias, gerar um servidor.
+
+Dev Server
+
+  npm i -D webpack-dev-server 
+
+no script do package.json
+
+  "scripts":{
+    "start:dev": "webpack-dev-server"
+  }
+
+Vai montar um servidor local para desenvolvimento.
+
+
+
