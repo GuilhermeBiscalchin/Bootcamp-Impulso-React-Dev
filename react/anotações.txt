@@ -249,4 +249,138 @@ no script do package.json
 Vai montar um servidor local para desenvolvimento.
 
 
+ ***** ESLint ******
+
+Configuração
+
+	npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-watch
+
+Código simples para o eslint
+
+https://github.com/Tautorn/introduction-reactj
+
+acessar o eslint, para ver a documentação e melhorar a qualidade do código.
+
+ => Para o webpack
+
+Utilizar o 'sourcemap'
+
+	devtool: 'source-map'
+
+Para gerar um mapeamento de todos os arquivos, de forma que o arquivo fica melhor para debugar.
+
+
+==> Renderização Condicional
+
+- Topico 1 => Variáveis de elementos
+
+ Se o react vai renderização ou não.
+Exemplo se visualizar o historico do cliente for verdadeiro!, vai ser renderizado.
+Se for falso, não vai ser renderizado,condicionando o operador '&&'
+
+ true - o botão aparece na tela, false - o botão não renderiza.
+ se estiver com o if-else inline, ou aparece um ou aparece o outro.
+
+
+
+
+- Topico 2 => If inline com o Operador Lógico && 
+
+
+ Com o operador &&
+{historico && (
+               <div>
+               Existe um historico de cliente!!!  
+               <br/>
+               {buttonA}
+             </div>
+        )}
+
+
+- Topico 3 => If-Else inline com Operador Condicional
+
+Usando o if-else para se não tiver um cliente aparecer um botão ou se tiver aparecer o outro
+ usando o '?' e ' : '
+{historico ? (
+               <div>
+               Existe um historico de cliente!!!  
+               <br/>
+               {buttonA}
+             </div>
+        ) : (
+            <div>
+                Cadastrar Cliente
+                <br/>
+                {buttonB}
+                </div>
+        )}
+
+=> /Maneira mais simples para usar esse método,separado por funções
+
+
+ const renderHistorico = () => (
+        <div>
+               Existe um historico de cliente!!!  
+               <br/>
+               {buttonA}
+             </div>
+    )
+
+    const cadastrarCliente = () => (
+        <div>
+                Cadastrar Cliente
+                <br/>
+                {buttonB}
+                </div>
+    )
+
+     {historico ? renderHistorico() : cadastrarCliente() }
+
+- Topico 4 => Evitando que um Componente seja Renderizado
+
+
+Evitando que um componente seja renderizado.
+
+Não recomendado mais de um return, no mesmo método.
+
+
+ const nomeCliente = () => {
+        if(!historico) return null
+
+        return(
+            <div>
+                <h1>Nome do Cliente: Guilherme</h1>
+            </div>
+        )
+    }
+
+na função
+<div>
+            {nomeCliente()}
+        </div>
+
+  Exemplo na pasta 'renderizacaoCondicional'
+
+==> Listas e Chaves
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
