@@ -315,7 +315,8 @@ Usando o if-else para se não tiver um cliente aparecer um botão ou se tiver ap
                 </div>
         )}
 
-=> /Maneira mais simples para usar esse método,separado por funções
+=> Maneira mais simples para usar esse método,separado por funções
+// aqui pode passar direto sem o inrrow function '= ()'
 
 
  const renderHistorico = () => (
@@ -363,13 +364,179 @@ na função
 
 ==> Listas e Chaves
 
+- Topico 1 => Renderizand Múltiplos Componentes
+
+- Topico 2 => Componente de Lista Básico
+
+const listaClientes = [
+    {
+        id: 1,
+        nome: 'Pelé'
+    },
+    {
+        id:2,
+        nome:'Romário'
+    },
+    {
+        id: 3,
+        nome: 'Gaucho'
+    },
+    {
+        id: 4,
+        nome:'Marcelinho'
+    }
+]
+
+Criação da função para separar em blocos 
+ chamo o array de objeto, e passa o 'map' com a renderização que fiz.
+Na função está retornando a lista, com todos o clientes que criei.
+ Interação em cima de uma lista em React.
+
+ const renderClientes = (cliente, index) => {
+    return(
+        <li>{cliente.nome}</li>
+    )
+}
+
+  <ul>
+                {listaClientes.map(renderClientes)}
+                </ul>
 
 
 
+- Topico 3 => Chaves
+
+No React é necessário passar a key.
+
+ const renderClientes = (cliente, index) =>
+
+ a key, vai ser o index, retornando a posição do elemento no array.
+
+    <li key={index}>{cliente.nome}</li>
+
+Sempre chave únicas.
+
+Não colocar o  'index' de forma direta, para sempre ser gerado unico o valor.
+Colocar em ` `, com um nome que faça sentido do que está fazendo.
+e depois chamando o 'id',definido na lista.
+
+Evita problemas de chave duplicadas.
+
+<li key={`clientes-${cliente.id}`}>{cliente.nome}</li>
+
+Interando uma outra lista, utilizando o map.
+
+ <li key={`clientes-${cliente.id}`}>{cliente.nome}</li>
+            {cliente.clubes.map(renderClubes)}
+
+E fazendo outra função para essa exibição.
+
+  const renderClubes = (clube,index) => {
+        return(
+            <div style = {{paddingLeft: '30px'}}>
+                <li key={`clube-${index}`}>{clube}</li>
+            </div>
+        )
+    } 
+
+- Topico 4 => Extraindo Componentes com Chaves
+
+- Topico 5 => Chaves devem ser Únicas apenas entre Elementos Irmãos
+
+Porém aqui, vai reclamar do 'index', para ter uma única chave, e não ficar dando erro.
+Ter um 'id' separado, para ter uma chave única.
+
+Para resolver o erro, colocar a chamada do indice no elemento pai.
+
+const renderClientes = (cliente, index) => {
+    return(
+        <div key={`clientes-${cliente.id}`}>
+            <li>{cliente.nome}</li>
+            {cliente.clubes.map(renderClubes)}
+        </div>
+    )
+}
+
+    const renderClubes = (clube,index) => {
+        return(
+             <div style = {{paddingLeft: '30px'}} key={`clube-${index}`}>
+                <li>{clube}</li>
+            </div>
+        )
+    } 
+
+==> Manipulando Eventos
+
+- Evento de onClick
+
+//Evitar o re-render
+const showEvent = () => {
+    alert('Evento de onClick!')
+}
+//Exemplo onClick
+const Button = <button onClick ={showEvent}>Mostrar Evento!</button>
+
+Evento 'e', que mostra tudo o que aconteceu quando cliquei no botão 
+
+console.log(e)
+
+Manipulação de uma valor alterado, exemplo com o 'target'
+
+- Evento de onChange
+
+   const handleChange = (e) => {
+       const {value} = e.target
+       console.log(value)
+   }
+
+ <input onChange = {handleChange}/>
+
+ Pode ser passando argumentos para alteração de eventos.
+
+Dentro da função a variavel
+ const name = "Digital Innovation"
+
+Pegando a variavel fora do escopo, e passando (evitando de fazer o bind)
+   const showEvent = (e) => {
+        console.log('Evento de onClick!')
+        //Tenho a descrição de todos os eventos
+        console.log(e)
+        alert(name)
+    }
+
+- Argumentos para alterações de eventos
+Botão Deletar
+
+ Aparece um botão para deletar cada cliente.
+const handleClick = (e) => {
+    console.log('deletar cliente')
+}
+
+ <li>{cliente.nome} <button onClick = {handleClick}>Delete Cliente x</button></li>
+
+Dessa forma mostra a posição do cliente especifica para deletar, com o argumentos 'id'
+
+const handleClick = (e,id) => {
+    console.log('deletar cliente')
+    alert(`ID do cliente:${id}`)
+}
+
+<li>{cliente.nome} <button onClick = {(e) => handleClick(e,cliente.id)}>Delete Cliente x</button></li>
 
 
+==> Pensando com ReactJS
 
+- Comece com um Mock
 
+- Separe a UI em Uma Hieraquia de Componentes
+
+- Crie uma versão Estática em React
+
+- Identifique a Representação Mínima(mas completa) do State da UI
+
+- Identifique onde State deve ficar.
+
+- Adicione o Fluxo de Dados Inverso
 
 
 
